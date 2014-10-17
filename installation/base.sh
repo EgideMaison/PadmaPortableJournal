@@ -45,4 +45,11 @@ lvcreate -L 150G ddsdd -n docs
 mkfs.ext4 -L racine /dev/ddsdd/racine
 mkfs.ext4 -L docs /dev/ddsdd/docs
 
+# Montage de disques {{{2
+mount /dev/ddsdd/racine /mnt
+
+# Créations des dossiers racines pour les montages
+mkdir -p /mnt/{boot,home}
+mount /dev/sda1 /mnt/boot
+mount /dev/ddsdd/docs /mnt/home
 
