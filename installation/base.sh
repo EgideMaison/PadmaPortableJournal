@@ -31,3 +31,18 @@
 # Partition de boot {{{2
 mkfs.ext2 /dev/sda1
 
+# LVM {{{2
+# création du groupe physique
+pvcreate /dev/sda2
+
+# création du groupe logique
+vgcreate ddsdd /dev/sda2
+
+# Création des volumes logiques
+lvcreate -L 20G ddsdd -n racine
+lvcreate -L 150G ddsdd -n docs
+
+mkfs.ext4 -L racine /dev/ddsdd/racine
+mkfs.ext4 -L docs /dev/ddsdd/docs
+
+
