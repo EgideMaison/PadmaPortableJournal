@@ -20,15 +20,17 @@
 
 # Gestion des erreurs {{{1
 # La commande à un argument, ce qui sera affiché sur la ligne de commande.
+
+# Demande à bash d'exécuter gest_err à chaque commande en erreur
+trap 'gest_err' ERR
+
+# Afficher le contenu de la variable 'msger' puis quitte le script
 gest_err(){
-	if [ $? -eq 0 ]
-	then
-		echo "Il n'y a pas d'erreur"
-	else
-		echo "$1"
-	fi
+	echo -e "\n\t-+- erreur -+-\n\n${msger}\n"
 	exit 1
 }
+
+exit 0
 
 # Préparation des disques {{{1
 
