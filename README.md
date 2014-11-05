@@ -4,8 +4,14 @@ PadmaPortableJournal
 Journal pour le suivit de l'administration du portable de Padma.
 
 
-Utilisation
------------
+Organisation
+------------
 
-C'est le système gitflow qui est utilisé pour la gestion de ce dépôt.
+Gitflow, mais détourné:
+
+- stable : la branche master de gitflow;
+- master : la branche develop de gitflow;
+
+
+Pour le reste, tout est normal.
 
