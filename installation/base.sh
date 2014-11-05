@@ -17,7 +17,18 @@
 #       CREATED:  17. 10. 14 20:45:08 CEST
 #        SOURCE:  https://github.com/EgideMaison/PadmaPortableJournal
 #=========================================================================
-# /Intro }}}1
+
+# Gestion des erreurs {{{1
+# La commande à un argument, ce qui sera affiché sur la ligne de commande.
+gest_err(){
+	if [ $? -eq 0 ]
+	then
+		echo "Il n'y a pas d'erreur"
+	else
+		echo "$1"
+	fi
+	exit 1
+}
 
 # Préparation des disques {{{1
 
