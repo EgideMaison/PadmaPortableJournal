@@ -30,6 +30,23 @@ gest_err(){
 	exit 1
 }
 
+# confirmation d'exécution du script {{{2
+echo -n "
+                   /!\\ D A N G E R /!\\
+    L'exécution de ce script peu très gravement nuire à vos données.
+    Les disques durs vont être formaté, leur contenu supprimé.
+
+    Êtes vous sur de vouloir continuer? (répondez "YES") :  "
+
+read avertissement
+if [[ "$avertissement" != "YES" ]] ; then
+	echo "    Il fallait mettre 'YES' en majuscule. Au revoir..."
+	exit 0
+fi
+
+echo "    script fini"
+
+
 exit 0
 
 # Préparation des disques {{{1
