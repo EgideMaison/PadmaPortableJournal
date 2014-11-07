@@ -51,8 +51,10 @@ exit 0
 
 # Préparation des disques {{{1
 
-# Partitionnement du disque {{{2
+# Parti tionnement du disque {{{2
 fpartitions(){
+	echo "=> Partitionnementi primaire du disque"
+	msger="Le partitionnement a échoué (fpartitions())"
 	# Avec cfdisk, création de deux partitions :
 	# /dev/sda1   2048-514047        512000     250M 83 Linux
 	# /dev/sda2 514048-488397167  487883120   232.7G 8e Linux LVM
@@ -62,6 +64,8 @@ fpartitions(){
 
 # Préparation des partition LVM {{{2
 flvm(){
+	echo "=> partitionnement avec LVM pour les données"
+	msger="La préparation des partitions LVM a échoué"
 	# création du groupe physique
 	pvcreate /dev/sda2
 
